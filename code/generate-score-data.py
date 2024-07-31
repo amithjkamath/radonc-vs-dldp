@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 import os
+import sys
 import numpy as np
 import SimpleITK as sitk
 import pandas as pd
@@ -104,7 +105,16 @@ def compute_target_dose_difference(data_dir, subject_prefix, dose_name):
 
 
 if __name__ == "__main__":
-    data_dir = os.path.join("/Users/amithkamath", "data", "DLDP", "astute-experiments")
+
+    # This file will not run without raw data. Contact the author for access to the data. All the
+    # results generated from this file is stored in radonc-vs-dldp.zip, in this repository.
+
+    sys.exit("This file cannot run without data from the authors.")
+
+    data_root = os.path.join("/Users/amithkamath/data/")
+    data_dir = os.path.join(data_root, "DLDP", "astute-experiments")
+    results_dir = os.path.join(data_root, "radonc-vs-dldp", "results")
+    os.makedirs(results_dir, exist_ok=True)
 
     subject_prefix = "ISAS_GBM_0"
     for subject_id in [70, 71, 72, 73, 74, 75, 76, 78, 80, 81, 82, 83, 84, 85, 86]:
@@ -115,14 +125,14 @@ if __name__ == "__main__":
 
         subject_name = subject_prefix + str(subject_id)
 
-        prediction = False
+        prediction = True
         if prediction:
             dose_name = "Predicted_Dose"
-            output_dir = os.path.join(data_dir, "DVH_predicted")
+            output_dir = os.path.join(results_dir, "predicted")
             os.makedirs(output_dir, exist_ok=True)
         else:
             dose_name = "Dose_ref"
-            output_dir = os.path.join(data_dir, "DVH_ref")
+            output_dir = os.path.join(results_dir, "reference")
             os.makedirs(output_dir, exist_ok=True)
 
         # First report dose and DVH scores between predicted dose and planned dose.
