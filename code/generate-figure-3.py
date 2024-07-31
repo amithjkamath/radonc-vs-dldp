@@ -1,4 +1,6 @@
 import os
+import zipfile
+import tempfile
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -27,47 +29,13 @@ def rank_scores(y_true, y_score):
     return score, coeff
 
 
-if __name__ == "__main__":
-    root_path = "/Users/amithkamath/data/"
-    expert_path = os.path.join(root_path, "adoser-data/expert/")
-    data_path = os.path.join(root_path, "adoser-data/experiments/")
-    reference_path = os.path.join(data_path, "reference")
-    prediction_path = os.path.join(data_path, "predicted")
+def generate_reference_results(cases, list_oar_names, type, thresh_gt, n_oar_gt, root_path):
 
-    jw_results = pd.read_csv(os.path.join(expert_path, "jw_impact.csv"))
-    jw_results = jw_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
-
-    ee_results = pd.read_csv(os.path.join(expert_path, "ee_impact.csv"))
-    ee_results = ee_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
-
-    er_results = pd.read_csv(os.path.join(expert_path, "er_impact.csv"))
-    er_results = er_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
-
-    type = "max"
-    n_oar_gt = 1
-    thresh_gt = 0.1
     output_path = os.path.join(
-        os.path.join(root_path, "adoser-data/results/"),
+        os.path.join(root_path, "results"),
         str(thresh_gt) + "_" + str(n_oar_gt) + "_" + type,
     )
     os.makedirs(output_path, exist_ok=True)
-
-    cases = [70, 71, 72, 73, 74, 75, 76, 78, 80, 81, 82, 83, 84, 85, 86]
-    list_oar_names = [
-        "BrainStem",
-        "Chiasm",
-        "Cochlea_L",
-        "Cochlea_R",
-        "Eye_L",
-        "Eye_R",
-        "Hippocampus_L",
-        "Hippocampus_R",
-        "LacrimalGland_L",
-        "LacrimalGland_R",
-        "OpticNerve_L",
-        "OpticNerve_R",
-        "Pituitary",
-    ]
 
     results = []
     for case in cases:
@@ -105,10 +73,16 @@ if __name__ == "__main__":
     reference_results.iloc[10, 4] = None  # Handle case 82
     reference_results.to_csv(os.path.join(output_path, "reference_results.csv"))
     reference_results = reference_results.loc[:, 1:].stack().reset_index()
+    return reference_results
 
-    alpha = 0.1
-    n_oar_pred = 3
-    thresh_pred = alpha * thresh_gt
+
+def generate_predicted_results(cases, list_oar_names, type, alpha, thresh_pred, n_oar_pred, root_path):
+
+    output_path = os.path.join(
+        os.path.join(root_path, "results"),
+        str(thresh_pred) + "_" + str(n_oar_pred) + "_" + type,
+    )
+    os.makedirs(output_path, exist_ok=True)
     results = []
     for case in cases:
         out = []
@@ -153,65 +127,117 @@ if __name__ == "__main__":
     )
 
     predicted_results = predicted_results.loc[:, 1:].stack().reset_index()
+    return predicted_results
 
-    data_dict = {
-        "Prediction": predicted_results,
-        "R1": jw_results,
-        "R2": ee_results,
-        "R3": er_results,
-    }
-    cat_names = ["Better", "No Change", "Worse"]
-    for key in data_dict.keys():
-        coeff = spearmanr(
-            list(reference_results.iloc[:, 2]), list(data_dict[key].iloc[:, 2]),
-        )
 
-        score = ndcg_score(
-            np.asarray(
-                [list(reference_results.iloc[:, 2].astype("category").cat.codes)]
-            ),
-            np.asarray([list(data_dict[key].iloc[:, 2].astype("category").cat.codes)]),
-        )
-        print(
-            classification_report(
+if __name__ == "__main__":
+
+    file_path = os.path.dirname(__file__)
+    path_to_data = os.path.join(file_path, '../radonc-vs-dldp-data.zip')
+    zf = zipfile.ZipFile(path_to_data)
+
+    with tempfile.TemporaryDirectory() as tempdir:
+        zf.extractall(tempdir)
+
+        expert_path = os.path.join(tempdir, "radonc-vs-dldp-data", "expert")
+        data_path = os.path.join(tempdir, "radonc-vs-dldp-data", "experiments")
+        reference_path = os.path.join(data_path, "reference")
+        prediction_path = os.path.join(data_path, "predicted")
+
+        jw_results = pd.read_csv(os.path.join(expert_path, "jw_impact.csv"))
+        jw_results = jw_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
+
+        ee_results = pd.read_csv(os.path.join(expert_path, "ee_impact.csv"))
+        ee_results = ee_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
+
+        er_results = pd.read_csv(os.path.join(expert_path, "er_impact.csv"))
+        er_results = er_results.iloc[:, [1, 2, 3, 4]].stack().reset_index()
+
+        list_oar_names = [
+            "BrainStem",
+            "Chiasm",
+            "Cochlea_L",
+            "Cochlea_R",
+            "Eye_L",
+            "Eye_R",
+            "Hippocampus_L",
+            "Hippocampus_R",
+            "LacrimalGland_L",
+            "LacrimalGland_R",
+            "OpticNerve_L",
+            "OpticNerve_R",
+            "Pituitary",
+        ]
+
+        cases = [70, 71, 72, 73, 74, 75, 76, 78, 80, 81, 82, 83, 84, 85, 86]
+        type = "max"
+        n_oar_gt = 1
+        thresh_gt = 0.1
+        reference_results = generate_reference_results(cases, list_oar_names, type, thresh_gt, n_oar_gt, tempdir)
+
+        alpha = 0.1
+        n_oar_pred = 3
+        thresh_pred = alpha * thresh_gt
+        predicted_results = generate_predicted_results(cases, list_oar_names, type, alpha, thresh_pred, n_oar_pred, tempdir)
+
+        data_dict = {
+            "Prediction": predicted_results,
+            "R1": jw_results,
+            "R2": ee_results,
+            "R3": er_results,
+        }
+        cat_names = ["Better", "No Change", "Worse"]
+        for key in data_dict.keys():
+            coeff = spearmanr(
+                list(reference_results.iloc[:, 2]), list(data_dict[key].iloc[:, 2]),
+            )
+
+            score = ndcg_score(
+                np.asarray(
+                    [list(reference_results.iloc[:, 2].astype("category").cat.codes)]
+                ),
+                np.asarray([list(data_dict[key].iloc[:, 2].astype("category").cat.codes)]),
+            )
+            print(
+                classification_report(
+                    list(reference_results.iloc[:, 2]),
+                    list(data_dict[key].iloc[:, 2]),
+                    labels=cat_names,
+                )
+            )
+            print(f"Spearman coefficient (GT vs {key}) is: {coeff}\n")
+            print(f"nDCG for (GT vs {key}) is: {score}\n")
+            conf_mat = confusion_matrix(
                 list(reference_results.iloc[:, 2]),
                 list(data_dict[key].iloc[:, 2]),
-                labels=cat_names,
+                normalize="true",
             )
-        )
-        print(f"Spearman coefficient (GT vs {key}) is: {coeff}\n")
-        print(f"nDCG for (GT vs {key}) is: {score}\n")
-        conf_mat = confusion_matrix(
-            list(reference_results.iloc[:, 2]),
-            list(data_dict[key].iloc[:, 2]),
-            normalize="true",
-        )
-        print(f"Confusion matrix for (Reference vs {key}) is: \n{conf_mat}")
-        # plt.figure(figsize=(24, 24))
-        # cm = ConfusionMatrixDisplay(conf_mat, display_labels=cat_names)
-        # cm.plot()
-        # plt.title(f"Reference vs {key}")
-        # plt.show()
-        df_cm = pd.DataFrame(conf_mat, index=cat_names, columns=cat_names)
-        plt.figure(figsize=(24, 24))
-        # cm = ConfusionMatrixDisplay(conf_mat, display_labels=cat_names)
-        # cm.plot()
-        off_diag_mask = np.eye(*conf_mat.shape, dtype=bool)
+            print(f"Confusion matrix for (Reference vs {key}) is: \n{conf_mat}")
+            # plt.figure(figsize=(24, 24))
+            # cm = ConfusionMatrixDisplay(conf_mat, display_labels=cat_names)
+            # cm.plot()
+            # plt.title(f"Reference vs {key}")
+            # plt.show()
+            df_cm = pd.DataFrame(conf_mat, index=cat_names, columns=cat_names)
+            plt.figure(figsize=(24, 24))
+            # cm = ConfusionMatrixDisplay(conf_mat, display_labels=cat_names)
+            # cm.plot()
+            off_diag_mask = np.eye(*conf_mat.shape, dtype=bool)
 
-        vmin = np.min(conf_mat)
-        vmax = np.max(conf_mat)
-        fig = plt.figure()
-        sns.heatmap(
-            df_cm, annot=True, mask=~off_diag_mask, cmap="Greens", vmin=vmin, vmax=vmax
-        )
-        sns.heatmap(
-            df_cm,
-            annot=True,
-            mask=off_diag_mask,
-            cmap="OrRd",
-            vmin=vmin,
-            vmax=vmax,
-            cbar_kws=dict(ticks=[]),
-        )
-        plt.title(f"Reference vs {key}")
-        plt.show()
+            vmin = np.min(conf_mat)
+            vmax = np.max(conf_mat)
+            fig = plt.figure()
+            sns.heatmap(
+                df_cm, annot=True, mask=~off_diag_mask, cmap="Greens", vmin=vmin, vmax=vmax
+            )
+            sns.heatmap(
+                df_cm,
+                annot=True,
+                mask=off_diag_mask,
+                cmap="OrRd",
+                vmin=vmin,
+                vmax=vmax,
+                cbar_kws=dict(ticks=[]),
+            )
+            plt.title(f"Reference vs {key}")
+            plt.show()

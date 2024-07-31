@@ -32,6 +32,7 @@ def rank_scores(y_true, y_score):
 
 
 if __name__ == "__main__":
+
     root_path = "/Users/amithkamath/data/"
     expert_path = os.path.join(root_path, "adoser-data/expert/")
     data_path = os.path.join(root_path, "adoser-data/experiments/")
@@ -241,7 +242,6 @@ if __name__ == "__main__":
     plt.figure(figsize=(16, 12))
     ax = sns.heatmap(
         precision_array,
-        #mask=precision_array < 0.48,
         xticklabels=precision_df.columns,
         yticklabels=precision_df.index,
         cmap="viridis",
@@ -259,7 +259,6 @@ if __name__ == "__main__":
     plt.figure(figsize=(16, 12))
     ax = sns.heatmap(
         recall_array,
-        #mask=recall_array < 0.46,
         xticklabels=recall_df.columns,
         yticklabels=recall_df.index,
         cmap="viridis",
@@ -279,7 +278,6 @@ if __name__ == "__main__":
     plt.figure(figsize=(16, 12))
     ax = sns.heatmap(
         f1_array,
-        #mask=f1_array < 0.44,
         xticklabels=f1_df.columns,
         yticklabels=f1_df.index,
         cmap="viridis",
