@@ -1,0 +1,115 @@
+﻿Start time,Completion time,Duration,Name,Subject ID,Alt 1,Alt 2,Alt 3,Alt 4,Rank 1,Rank 2,Rank 3,Rank 4
+1.15.24 18:10:29,1.15.24 18:14:15,00:03:46,RO1,70,Low Negative Impact,Low Negative Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.15.24 18:15:20,1.15.24 18:18:01,00:02:41,RO1,71,Low Negative Impact,No Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.15.24 18:19:27,1.15.24 18:22:15,00:02:48,RO1,72,No Impact,No Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.15.24 18:22:45,1.15.24 18:25:19,00:02:34,RO1,73,No Impact,No Impact,No Impact,No Impact,Second,Third,Fourth,First
+1.15.24 18:26:35,1.15.24 18:29:24,00:02:49,RO1,74,No Impact,No Impact,Low Negative Impact,High Negative Impact,Fourth,Third,First,Second
+1.15.24 18:31:13,1.15.24 18:34:03,00:02:50,RO1,75,No Impact,No Impact,Low Negative Impact,High Negative Impact,Fourth,Third,First,Second
+1.8.24 18:28:32,1.8.24 18:31:14,00:02:42,RO1,76,Low Negative Impact,No Impact,No Impact,No Impact,First,Third,Fourth,Second
+1.8.24 18:31:48,1.8.24 18:34:16,00:02:28,RO1,78,No Impact,No Impact,No Impact,,Second,Third,First,Fourth
+1.8.24 18:44:19,1.8.24 18:48:37,00:04:18,RO1,80,No Impact,No Impact,No Impact,No Impact,Fourth,First,Second,Third
+1.8.24 18:36:23,1.8.24 18:40:08,00:03:45,RO1,81,No Impact,No Impact,No Impact,No Impact,Second,First,Third,Fourth
+1.8.24 18:41:25,1.8.24 18:42:57,00:01:32,RO1,82,No Impact,No Impact,No Impact,,First,Second,Third,Fourth
+1.8.24 18:49:34,1.8.24 18:52:37,00:03:03,RO1,83,No Impact,No Impact,No Impact,No Impact,Fourth,First,Second,Third
+1.8.24 18:53:41,1.8.24 18:56:21,00:02:40,RO1,84,No Impact,Low Negative Impact,No Impact,Low Negative Impact,Fourth,Third,Second,First
+1.8.24 18:56:43,1.8.24 18:58:00,00:01:17,RO1,85,No Impact,No Impact,No Impact,No Impact,Third,Fourth,Second,First
+1.15.24 18:34:32,1.15.24 18:37:28,00:02:56,RO1,86,Low Negative Impact,Low Negative Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.24.24 16:25:41,1.24.24 16:30:42,00:05:01,RO2,70,Low Negative Impact,No Impact,No Impact,Low Negative Impact,Fourth,First,Third,Second
+1.24.24 16:30:46,1.24.24 16:34:39,00:03:53,RO2,71,Low Negative Impact,No Impact,No Impact,No Impact,First,Second,Fourth,Third
+1.24.24 16:22:02,1.24.24 16:25:35,00:03:33,RO2,72,Low Negative Impact,No Impact,No Impact,No Impact,First,Second,Fourth,Third
+1.24.24 16:14:31,1.24.24 16:21:12,00:06:41,RO2,73,No Impact,Low Negative Impact,Low Negative Impact,No Impact,Second,Third,First,Fourth
+1.24.24 16:34:43,1.24.24 16:38:19,00:03:36,RO2,74,No Impact,No Impact,High Negative Impact,High Negative Impact,Fourth,Third,Second,First
+1.24.24 16:38:23,1.24.24 16:41:40,00:03:17,RO2,75,No Impact,No Impact,Low Negative Impact,High Negative Impact,Fourth,Third,Second,First
+1.24.24 16:41:43,1.24.24 16:44:48,00:03:05,RO2,76,Low Negative Impact,No Impact,Low Negative Impact,No Impact,First,Third,Fourth,Second
+1.24.24 16:44:53,1.24.24 16:47:30,00:02:37,RO2,78,No Impact,No Impact,No Impact,,Third,Second,First,Fourth
+1.24.24 16:47:34,1.24.24 16:49:57,00:02:23,RO2,80,No Impact,No Impact,Low Negative Impact,Low Negative Impact,Fourth,Third,Second,First
+1.24.24 16:50:00,1.24.24 16:52:16,00:02:16,RO2,81,High Negative Impact,Low Negative Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.24.24 16:52:21,1.24.24 16:54:12,00:01:51,RO2,82,No Impact,No Impact,Low Negative Impact,,Third,First,Second,Fourth
+1.24.24 16:54:18,1.24.24 16:57:05,00:02:47,RO2,83,Low Negative Impact,No Impact,No Impact,No Impact,First,Second,Third,Fourth
+1.24.24 16:57:08,1.24.24 16:59:36,00:02:28,RO2,84,High Negative Impact,High Negative Impact,No Impact,Low Negative Impact,Second,First,Fourth,Third
+1.24.24 16:59:39,1.24.24 17:02:22,00:02:43,RO2,85,No Impact,No Impact,Low Negative Impact,No Impact,Third,Fourth,First,Second
+1.24.24 17:02:25,1.24.24 17:04:44,00:02:19,RO2,86,High Negative Impact,High Negative Impact,No Impact,No Impact,First,Second,Fourth,Third
+2.7.24 15:23:51,2.7.24 15:30:31,00:06:40,RO3,70,Low Negative Impact,No Impact,No Impact,High Negative Impact,Fourth,First,Third,Second
+2.7.24 15:31:01,2.7.24 15:36:49,00:05:48,RO3,71,High Negative Impact,Low Negative Impact,Low Negative Impact,No Impact,First,Third,Second,Fourth
+2.7.24 15:13:30,2.7.24 15:22:41,00:09:11,RO3,72,Low Negative Impact,Low Negative Impact,No Impact,Low Negative Impact,First,Second,Fourth,Third
+2.7.24 15:37:56,2.7.24 15:43:13,00:05:17,RO3,73,Low Negative Impact,High Negative Impact,Low Negative Impact,Low Negative Impact,Second,Third,Fourth,First
+2.7.24 15:44:32,2.7.24 15:48:56,00:04:24,RO3,74,No Impact,Low Negative Impact,Low Negative Impact,High Negative Impact,Fourth,Third,Second,First
+2.7.24 15:49:20,2.7.24 15:55:07,00:05:47,RO3,75,Low Negative Impact,Low Negative Impact,Low Negative Impact,Low Negative Impact,Fourth,Second,Third,First
+2.7.24 15:55:20,2.7.24 15:59:18,00:03:58,RO3,76,Low Negative Impact,No Impact,Low Negative Impact,Low Negative Impact,First,Third,Fourth,Second
+2.7.24 16:00:59,2.7.24 16:05:00,00:04:01,RO3,78,No Impact,No Impact,No Impact,,Third,Second,First,Fourth
+2.7.24 16:05:09,2.7.24 16:09:02,00:03:53,RO3,80,No Impact,No Impact,Low Negative Impact,Low Negative Impact,Fourth,Third,Second,First
+2.7.24 16:09:32,2.7.24 16:13:04,00:03:32,RO3,81,Low Negative Impact,Low Negative Impact,No Impact,No Impact,Second,First,Third,Fourth
+2.7.24 16:19:07,2.7.24 16:21:35,00:02:28,RO3,82,No Impact,No Impact,No Impact,,Third,Second,First,Fourth
+2.7.24 16:21:39,2.7.24 16:23:35,00:01:56,RO3,83,Low Negative Impact,No Impact,No Impact,No Impact,First,Second,Third,Fourth
+2.7.24 16:13:15,2.7.24 16:18:55,00:05:40,RO3,84,Low Negative Impact,High Negative Impact,No Impact,Low Negative Impact,Second,First,Fourth,Third
+2.7.24 16:24:14,2.7.24 16:28:05,00:03:51,RO3,85,No Impact,No Impact,Low Negative Impact,No Impact,Third,Fourth,First,Second
+2.7.24 16:28:19,2.7.24 16:31:49,00:03:30,RO3,86,High Negative Impact,High Negative Impact,No Impact,Low Negative Impact,First,Second,Fourth,Third
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
