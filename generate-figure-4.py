@@ -3,7 +3,7 @@ import zipfile
 import tempfile
 import pandas as pd
 
-from scores import generate_results
+from src.scores import generate_results
 
 from sklearn.metrics import (
     precision_score,
@@ -23,7 +23,7 @@ matplotlib.rc("font", **font)
 if __name__ == "__main__":
 
     file_path = os.path.dirname(__file__)
-    path_to_data = os.path.join(file_path, '../radonc-vs-dldp-data.zip')
+    path_to_data = os.path.join(file_path, 'data/radonc-vs-dldp-data.zip')
     zf = zipfile.ZipFile(path_to_data)
 
     with tempfile.TemporaryDirectory() as tempdir:
