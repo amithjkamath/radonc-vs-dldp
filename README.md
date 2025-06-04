@@ -1,5 +1,7 @@
 # Comparing the Performance of Radiation Oncologists versus a Deep Learning
 
+![MIDL 2024](https://img.shields.io/badge/Conference-MIDL%202024-blue)
+
 This repository contains code to reproduce the analysis from our recent MIDL 2024 paper:
 
 **"Comparing the Performance of Radiation Oncologists versus a Deep Learning Dose Predictor to Estimate Dosimetric Impact of Segmentation Variations for Radiotherapy"**  
