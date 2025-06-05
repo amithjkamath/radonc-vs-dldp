@@ -48,7 +48,7 @@ The model's performance is compared with three experienced radiation oncologists
 git clone https://github.com/amithjkamath/radonc-vs-dldp.git
 cd radonc-vs-dldp
 uv venv .venv
-uv pip install .
+uv pip install -r pyproject.toml
 ```
 
 Run code/generate-figure-3.py and code/generate-figure-4.py to reproduce the analysis. Data required to generate figures 3 and 4 from the paper is included in radonc-vs-dldp-data.zip.
