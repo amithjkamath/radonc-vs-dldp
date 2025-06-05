@@ -1,6 +1,7 @@
 # Comparing the Performance of Radiation Oncologists versus a Deep Learning
 
-![MIDL 2024](https://img.shields.io/badge/Conference-MIDL%202024-blue)
+![MIDL 2024](https://img.shields.io/badge/Conference-MIDL%202024-blue) ![Python](https://img.shields.io/badge/python-3.11%2B-blue) ![Testing](https://github.com/amithjkamath/radonc-vs-dldp/actions/workflows/test.yaml/badge.svg) ![License](https://img.shields.io/github/license/amithjkamath/radonc-vs-dldp)
+
 
 This repository contains code to reproduce the analysis from our recent MIDL 2024 paper:
 
