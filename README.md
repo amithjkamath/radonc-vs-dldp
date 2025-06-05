@@ -31,8 +31,7 @@ The model's performance is compared with three experienced radiation oncologists
 
 ## Key Contributions
 
-- A 3D dose prediction model using a cascaded U-Net architecture.
-- Evaluation of the model’s ability to classify segmentation variants as:
+- Evaluation of a Dose Prediction model’s ability to classify segmentation variants as:
   - **Sub-optimal**
   - **No Impact**
   - **Improved**
@@ -48,15 +47,19 @@ The model's performance is compared with three experienced radiation oncologists
 ```bash
 git clone https://github.com/amithjkamath/radonc-vs-dldp.git
 cd radonc-vs-dldp
-pip install -r requirements.txt
+uv .venv
+uv pip install .
 ```
 
 Run code/generate-figure-3.py and code/generate-figure-4.py to reproduce the analysis. Data required to generate figures 3 and 4 from the paper is included in radonc-vs-dldp-data.zip.
 
 If this is useful in your research, please consider citing:
 
-    @inproceedings{kamathcomparing,
+    @inproceedings{Kamath2024comparing,
       title={Comparing the Performance of Radiation Oncologists versus a Deep Learning Dose Predictor to Estimate Dosimetric Impact of Segmentation Variations for Radiotherapy},
       author={Kamath, Amith Jagannath and der Maur, Zahira Mercado Auf and Poel, Robert and Willmann, Jonas and Ermis, Ekin and Riggenbach, Elena and Andratschke, Nicolaus and Reyes, Mauricio},
-      booktitle={Medical Imaging with Deep Learning}
+      booktitle={Medical Imaging with Deep Learning},
+      year={2024},
+      volume={250},
+      url={https://proceedings.mlr.press/v250/kamath24a.html}
     }
