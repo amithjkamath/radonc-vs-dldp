@@ -47,7 +47,7 @@ The model's performance is compared with three experienced radiation oncologists
 ```bash
 git clone https://github.com/amithjkamath/radonc-vs-dldp.git
 cd radonc-vs-dldp
-uv .venv
+uv venv .venv
 uv pip install .
 ```
 
